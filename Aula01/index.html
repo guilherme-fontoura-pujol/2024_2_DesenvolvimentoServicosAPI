@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +8,31 @@
 </head>
 <body>
     <div id="minhaDiv">
-        Oi
+       Oi 
     </div>
+    <button onclick="alterar()">Alterar</button>
+    <script>
+        var mDiv = document.getElementById("minhaDiv");
+        var conteudo = mDiv.innerHTML + " galerinha! <hr>";
+        mDiv.innerHTML = conteudo;
+        function alterar(){
+            mDiv.style.backgroundColor = "#59d";
+            mDiv.style.width = "50%";
+            mDiv.setAttribute("align", "center");
+        }
+    </script>
+    <hr>
+    <input type="text" id="txtNome" />
+    <button onclick="salvar()">Adicionar</button> <br>
+    <ol id="lista">
+
+    </ol>
+    <script>
+        txtNome = document.getElementById("txtNome");
+        lista = document.getElementById("lista");
+        function salvar(){
+            lista.innerHTML += "<li>" + txtNome.value + "</li>";
+        }
+    </script>
 </body>
 </html>
